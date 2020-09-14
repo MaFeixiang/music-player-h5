@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    /*test*/
+    // test
+    body {
+        font-size: 12px;
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            padding-top: 60px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.2);
+
+            .song-img {
+                position: relative;
+                width: 70%;
+                height: 0;
+                // 基于父级的宽度计算的
+                padding-top: 70%;
+                // border: 1px solid #000;
+                margin: 0 auto;
+
+                .img-box {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #000;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    border-radius: 50%;
+
+                    img {
+                        width: 75%;
+                        height: 75%;
+                        border-radius: 50%;
+
+                    }
+                }
+            }
+
+            .song-info {
+                margin-top: 20px;
+                width: 100%;
+                text-align: center;
+                height: 126px;
+                // border: 1px solid #000;
+                color: #fff;
+
+                .song-name {
+                    font-size: 24px;
+                    line-height: 36px;
+                    margin-bottom: 8px;
+                }
+            }
+
+            .pro {
+                display: flex;
+                .cur-time,
+                .all-time {
+                    width: 60px;
+                    height: 40px;
+                    // border: 1px solid #000;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 40px;
+                }
+                .pro-wrap {
+                    flex: 1;
+                    // border: 1px solid #000;
+                    position: relative;
+                    overflow: hidden;
+                    padding:0 3px;
+                    .pro-bottom,.pro-top{
+                        position: absolute;
+                        width: 96%;
+                        height:1px;
+                        top:20px;
+                    }
+                    .pro-bottom{
+                        background-color:rgba(255,255,255,0.6);
+                    }
+                    .pro-top{
+                        // position: relative;
+                        background-color:#fff;
+                        transform: translateX(-100%);
+                        .spot{
+                            width:20px;
+                            height:20px;
+                            position: absolute;
+                            right:-10px;
+                            top:-10px;
+                            // border:1px solid red;
+                            display:flex;
+                            justify-content: center;
+                            align-items: center;
+                            &::after{
+                                content:"";
+                                display:block;
+                                width:5px;
+                                height:5px;
+                                background-color:#fff;
+                                border-radius:50%;
+                            }
+                        }
+                    }
+                }
+            }
+            .control {
+                position: absolute;
+                width: 100%;
+                height: 60px;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+
+                .btn {
+                    flex: 1;
+                    height: 100%;
+                    background-size: 20px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                .like {
+                    background-image: url(./../image/icon-like.png);
+
+                    &.liking {
+                        background-image: url(./../image/icon-like-solid.png);
+                    }
+                }
+
+                .prev {
+                    background-image: url(./../image/icon-prev.png)
+                }
+
+                .play {
+                    background-image: url(./../image/icon-play.png);
+
+                    &.playing {
+                        background-image: url(./../image/icon-pause.png);
+                    }
+                }
+
+                .next {
+                    background-image: url(./../image/icon-next.png)
+                }
+
+                .list {
+                    background-image: url(./../image/icon-playlist.png)
+                }
+            }
+
+            .list-song {
+                display: none;
+                position: fixed;
+                bottom: 0px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                ul {
+                    width: 100%;
+                    li {
+                        width: 100%;
+                        height: 50px;
+                        line-height: 50px;
+                        text-align: left;
+                        cursor: pointer;
+                        border-bottom: 1px solid #ddd;
+                        .img {
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            // vertical-align: middle;
+                            vertical-align: sub;
+                            margin-right: 10px;
+                            margin-left: 10px;
+                        }
+                        .song {
+                            font-size: 14px;
+                            font-weight: 700;
+                        }
+                        .singer {
+                            font-size: 12px;
+                        }
+                        .time {
+                            font-size: 12px;
+                            color: #555;
+                            float: right;
+                            padding-right: 10px;
+                        }
+                    }
+                    li.clicked {
+                        color: deeppink;
+                        // background-color: rgba()
+                    }
+                }
+                .close {
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+                .close:hover {
+                    color: deeppink;
+                }
+            }
+        }
+    }
+}
